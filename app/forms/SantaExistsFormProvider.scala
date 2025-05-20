@@ -14,8 +14,17 @@
  * limitations under the License.
  */
 
-package viewmodels
+package forms
 
-abstract class WithName(name: String) {
-  override val toString: String = name
+import javax.inject.Inject
+
+import forms.mappings.Mappings
+import play.api.data.Form
+
+class SantaExistsFormProvider @Inject() extends Mappings {
+
+  def apply(): Form[Boolean] =
+    Form(
+      "value" -> boolean("antaExists.error.required")
+    )
 }

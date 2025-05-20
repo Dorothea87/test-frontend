@@ -14,8 +14,13 @@
  * limitations under the License.
  */
 
-package viewmodels
+package pages
 
-abstract class WithName(name: String) {
-  override val toString: String = name
+import play.api.libs.json.JsPath
+
+case object SantaExistsPage extends QuestionPage[Boolean] {
+
+  override def path: JsPath = JsPath \ toString
+
+  override def toString: String = "antaExists"
 }

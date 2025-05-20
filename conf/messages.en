@@ -1,4 +1,4 @@
-service.name = test-frontend
+service.name = Santa Verifier
 
 site.back = Back
 site.remove = Remove
@@ -27,9 +27,10 @@ error.title.prefix = Error:
 error.prefix = Error
 error.summary.title = There is a problem
 
-index.title = test-frontend
-index.heading = test-frontend
-index.guidance = Welcome to your new frontend. Please see the README file for a guide to getting started.
+index.title = Santa Verifier
+index.heading = Santa Verifier
+index.guidance = Welcome to your service to check if Santa actually exists. Please fill out the questions to make sure your inner child is not dead yet!
+index.button = Start here
 
 checkYourAnswers.title = Check your answers
 checkYourAnswers.heading = Check your answers
@@ -47,3 +48,9 @@ signedOut.guidance = We did not save your answers.
 
 unauthorised.title = You can’t access this service with this account
 unauthorised.heading = You can’t access this service with this account
+
+SantaExists.title = Does Santa exist?
+SantaExists.heading = Does Santa exist?
+SantaExists.checkYourAnswersLabel = SantaExists
+SantaExists.error.required = Select yes if SantaExists
+SantaExists.change.hidden = SantaExists
