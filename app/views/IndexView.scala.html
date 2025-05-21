@@ -33,7 +33,7 @@
     <p class="govuk-body">
         @govukButton(
         ButtonViewModel(messages("index.button"))
-        .asLink(routes.IndexController.onPageLoad().url)
+        .asLink(routes.SantaExistsController.onPageLoad(models.NormalMode).url)
         )
     </p>
 
