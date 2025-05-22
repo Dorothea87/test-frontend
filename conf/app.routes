@@ -24,3 +24,8 @@ GET        /SantaExists                        controllers.SantaExistsController
 POST       /SantaExists                        controllers.SantaExistsController.onSubmit(mode: Mode = NormalMode)
 GET        /changeSantaExists                  controllers.SantaExistsController.onPageLoad(mode: Mode = CheckMode)
 POST       /changeSantaExists                  controllers.SantaExistsController.onSubmit(mode: Mode = CheckMode)
+
+GET        /dOB                  controllers.DOBController.onPageLoad(mode: Mode = NormalMode)
+POST       /dOB                  controllers.DOBController.onSubmit(mode: Mode = NormalMode)
+GET        /changeDOB                        controllers.DOBController.onPageLoad(mode: Mode = CheckMode)
+POST       /changeDOB                        controllers.DOBController.onSubmit(mode: Mode = CheckMode)

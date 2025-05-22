@@ -54,3 +54,13 @@ SantaExists.heading = Does Santa exist?
 SantaExists.checkYourAnswersLabel = SantaExists
 SantaExists.error.required = Select yes if SantaExists
 SantaExists.change.hidden = SantaExists
+
+dOB.title = DOB
+dOB.heading = Enter your date of birth
+dOB.hint = For example, 12 11 2007.
+dOB.checkYourAnswersLabel = DOB
+dOB.error.required.all = Enter the dOB
+dOB.error.required.two = The dOB must include {0} and {1}
+dOB.error.required = The dOB must include {0}
+dOB.error.invalid = Enter a real DOB
+dOB.change.hidden = DOB
