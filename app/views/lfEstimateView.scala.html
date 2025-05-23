@@ -14,34 +14,38 @@
  * limitations under the License.
  *@
 
+@import viewmodels.InputWidth._
+
 @this(
     layout: templates.Layout,
     formHelper: FormWithCSRF,
     govukErrorSummary: GovukErrorSummary,
-    govukRadios: GovukRadios,
+    govukInput: GovukInput,
     govukButton: GovukButton
 )
 
 @(form: Form[_], mode: Mode)(implicit request: Request[_], messages: Messages)
 
-@layout(pageTitle = title(form, messages("SantaExists.title"))) {
+@layout(pageTitle = title(form, messages("lfEstimate.title"))) {
 
-    @formHelper(action = routes.SantaExistsController.onSubmit(mode), Symbol("autoComplete") -> "off") {
+    @formHelper(action = routes.lfEstimateController.onSubmit(mode), Symbol("autoComplete") -> "off") {
 
         @if(form.errors.nonEmpty) {
             @govukErrorSummary(ErrorSummaryViewModel(form))
         }
 
-        @govukRadios(
-            RadiosViewModel.yesNo(
+        @govukInput(
+            InputViewModel(
                 field = form("value"),
-                legend = LegendViewModel(messages("SantaExists.heading")).asPageHeading()
+                label = LabelViewModel(messages("lfEstimate.heading")).asPageHeading()
             )
+            .asNumeric()
+            .withWidth(Fixed10)
         )
 
         @govukButton(
             ButtonViewModel(messages("site.continue"))
-            .asLink(routes.DOBController.onPageLoad(models.NormalMode).url)
+            .asLink(routes.CheckYourAnswersController.onPageLoad().url)
         )
     }
 }

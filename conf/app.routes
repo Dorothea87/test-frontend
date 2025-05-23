@@ -29,3 +29,8 @@ GET        /dOB                  controllers.DOBController.onPageLoad(mode: Mode
 POST       /dOB                  controllers.DOBController.onSubmit(mode: Mode = NormalMode)
 GET        /changeDOB                        controllers.DOBController.onPageLoad(mode: Mode = CheckMode)
 POST       /changeDOB                        controllers.DOBController.onSubmit(mode: Mode = CheckMode)
+
+GET        /lfEstimate                  controllers.lfEstimateController.onPageLoad(mode: Mode = NormalMode)
+POST       /lfEstimate                  controllers.lfEstimateController.onSubmit(mode: Mode = NormalMode)
+GET        /changelfEstimate                        controllers.lfEstimateController.onPageLoad(mode: Mode = CheckMode)
+POST       /changelfEstimate                        controllers.lfEstimateController.onSubmit(mode: Mode = CheckMode)

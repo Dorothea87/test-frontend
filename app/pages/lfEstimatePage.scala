@@ -1,4 +1,4 @@
-@*
+/*
  * Copyright 2025 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,20 +12,15 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *@
+ */
 
-@this(
-layout: templates.Layout,
-govukSummaryList: GovukSummaryList
-)
+package pages
 
-@(list: SummaryList)(implicit request: Request[_], messages: Messages)
+import play.api.libs.json.JsPath
 
-@layout(pageTitle = titleNoForm(messages("checkYourAnswers.title"))) {
+case object lfEstimatePage extends QuestionPage[Int] {
 
-<h1 class="govuk-heading-xl">@messages("checkYourAnswers.heading")</h1>
-<h4 class="govuk-heading-s">@messages("checkYourAnswers.mystery")</h4>
-<p class="govuk-body">@messages("checkYourAnswers.paragraph")</p>
+  override def path: JsPath = JsPath \ toString
 
-@govukSummaryList(list)
+  override def toString: String = "lfEstimate"
 }

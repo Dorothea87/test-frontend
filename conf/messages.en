@@ -34,6 +34,8 @@ index.button = Start here
 
 checkYourAnswers.title = Check your answers
 checkYourAnswers.heading = Check your answers
+checkYourAnswers.mystery = You actually cannot check your answers because Santa is one of the biggest mysteries of humanity. They immediately go to a secret place.
+checkYourAnswers.paragraph = Your answers were sent of to Santa Headquarters to check your credibility. Please wait for up to 7 business days to hear back from us.
 
 journeyRecovery.continue.title = Sorry, there is a problem with the service
 journeyRecovery.continue.heading = Sorry, there is a problem with the service
@@ -52,8 +54,8 @@ unauthorised.heading = You can’t access this service with this account
 SantaExists.title = Does Santa exist?
 SantaExists.heading = Does Santa exist?
 SantaExists.checkYourAnswersLabel = SantaExists
-SantaExists.error.required = Select yes if SantaExists
-SantaExists.change.hidden = SantaExists
+SantaExists.error.required = Select yes if Santa exists
+SantaExists.change.hidden = Santa exists
 
 dOB.title = DOB
 dOB.heading = Enter your date of birth
@@ -64,3 +66,12 @@ dOB.error.required.two = The dOB must include {0} and {1}
 dOB.error.required = The dOB must include {0}
 dOB.error.invalid = Enter a real DOB
 dOB.change.hidden = DOB
+
+lfEstimate.title = ElfEstimate
+lfEstimate.heading = How many Elves work for Santa (No. between 1 and 25000)?
+lfEstimate.checkYourAnswersLabel = ElfEstimate
+lfEstimate.error.nonNumeric = Enter your ElfEstimate using numbers
+lfEstimate.error.required = Enter your ElfEstimate
+lfEstimate.error.wholeNumber = Enter your ElfEstimate using whole numbers
+lfEstimate.error.outOfRange = ElfEstimate must be between {0} and {1}
+lfEstimate.change.hidden = ElfEstimate

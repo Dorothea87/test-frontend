@@ -42,6 +42,8 @@
 
         @govukButton(
             ButtonViewModel(messages("site.continue"))
+            .asLink(routes.lfEstimateController.onPageLoad(models.NormalMode).url)
+
         )
     }
 }

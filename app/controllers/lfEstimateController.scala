@@ -17,38 +17,38 @@
 package controllers
 
 import controllers.actions.*
-import forms.DOBFormProvider
+import forms.lfEstimateFormProvider
 
 import javax.inject.Inject
 import models.{Mode, UserAnswers}
 import navigation.Navigator
-import pages.DOBPage
+import pages.lfEstimatePage
 import play.api.i18n.{I18nSupport, MessagesApi}
 import play.api.mvc.{Action, AnyContent, MessagesControllerComponents}
 import repositories.SessionRepository
 import uk.gov.hmrc.play.bootstrap.frontend.controller.FrontendBaseController
-import views.html.DOBView
+import views.html.lfEstimateView
 
 import scala.concurrent.{ExecutionContext, Future}
 
-class DOBController @Inject()(
+class lfEstimateController @Inject()(
                                         override val messagesApi: MessagesApi,
                                         sessionRepository: SessionRepository,
                                         navigator: Navigator,
                                         identify: IdentifierAction,
                                         getData: DataRetrievalAction,
                                         requireData: DataRequiredAction,
-                                        formProvider: DOBFormProvider,
+                                        formProvider: lfEstimateFormProvider,
                                         val controllerComponents: MessagesControllerComponents,
-                                        view: DOBView
+                                        view: lfEstimateView
                                       )(implicit ec: ExecutionContext) extends FrontendBaseController with I18nSupport {
+
+  val form = formProvider()
 
   def onPageLoad(mode: Mode): Action[AnyContent] = (identify andThen getData) {
     implicit request =>
 
-      val form = formProvider()
-
-      val preparedForm = request.userAnswers.getOrElse(UserAnswers(request.userId)).get(DOBPage) match {
+      val preparedForm = request.userAnswers.getOrElse(UserAnswers(request.userId)).get(lfEstimatePage) match{
         case None => form
         case Some(value) => form.fill(value)
       }
@@ -59,17 +59,15 @@ class DOBController @Inject()(
   def onSubmit(mode: Mode): Action[AnyContent] = (identify andThen getData andThen requireData).async {
     implicit request =>
 
-      val form = formProvider()
-
       form.bindFromRequest().fold(
         formWithErrors =>
           Future.successful(BadRequest(view(formWithErrors, mode))),
 
         value =>
           for {
-            updatedAnswers <- Future.fromTry(request.userAnswers.set(DOBPage, value))
+            updatedAnswers <- Future.fromTry(request.userAnswers.set(lfEstimatePage, value))
             _              <- sessionRepository.set(updatedAnswers)
-          } yield Redirect(navigator.nextPage(DOBPage, mode, updatedAnswers))
+          } yield Redirect(navigator.nextPage(lfEstimatePage, mode, updatedAnswers))
       )
   }
 }
